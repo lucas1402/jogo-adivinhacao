@@ -18,21 +18,21 @@ int main()
     if(dificuldade == 'F')
     {
         numero_tentativas=15;
+
     }else if (dificuldade == 'M')
     {
         numero_tentativas=10;
-    }else (dificuldade == 'D')
-    {
+    }else(dificuldade == 'D');
         numero_tentativas=5;
-    }
+
     srand(time(NULL));
     const int NUMERO_SECRETO = rand() % 100;
 
     bool nao_acertou = true;
     int tentativas =0;
     double pontos =1000.0;
-    for (tentativas=1; tentativas<=numero_tentativas;tentativas)
-    {   
+    for (tentativas=1; tentativas<=numero_tentativas;tentativas++)
+    {
         cout<<"Tentativa: "<<tentativas<<endl;
         int chute;
         cout << "Qual é seu chute? ";
@@ -49,7 +49,7 @@ int main()
         if (acertou)
         {
             cout << "Parabéns você acertou o número secreto!" << endl;
-            nao_acertou = true;
+            nao_acertou = false;
             break;
         }
         else if (maior)
@@ -58,7 +58,7 @@ int main()
         }
         else
         {
-            cout << "Seu chute foi maior que o número secreto!" << endl;
+            cout << "Seu chute foi menor que o número secreto!" << endl;
         }
 
     }
@@ -66,12 +66,12 @@ int main()
     cout << " Fim de jogo!" << endl;
     if(nao_acertou){
         cout<<"Voce perdeu! Tente novamente"<<endl;
-    }else 
+    }else
     {
     cout<<" Voce acertou o numero secreto em:"<<tentativas<<" tentativas."<<endl;
     cout.precision(2);
     cout<<fixed;
     cout<<" Sua pontuação foi de "<<pontos<<" pontos."<<endl;
 
-    }   
+    }
 }
